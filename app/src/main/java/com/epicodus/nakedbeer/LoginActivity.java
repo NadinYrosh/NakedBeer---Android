@@ -10,7 +10,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Login extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.bLogin)Button mLogin;
     @Bind(R.id.etUsername) EditText mUsername;
     @Bind(R.id.etPassword) EditText mPassword;
@@ -29,6 +29,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        startActivity(intent);
+
+
         switch (view.getId()){
             case R.id.bLogin:
 
@@ -36,7 +40,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 break;
 
             case R.id.tvRegisterLink:
-                startActivity(new Intent(this, Register.class));
+                startActivity(new Intent(this, RegisterActivity.class));
                 break;
         }
     }

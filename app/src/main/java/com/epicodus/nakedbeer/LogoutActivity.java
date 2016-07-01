@@ -10,7 +10,7 @@ import android.widget.EditText;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class LogoutActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.bLogout)Button mLogout;
     @Bind(R.id.etName) EditText mName;
     @Bind(R.id.etUsername) EditText mUserName;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bLogout:
-                startActivity(new Intent(this, Login.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
         }
     }
