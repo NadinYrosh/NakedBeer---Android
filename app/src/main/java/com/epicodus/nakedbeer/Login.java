@@ -1,5 +1,6 @@
 package com.epicodus.nakedbeer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,9 +11,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class Login extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.bLogin)Button mbLogin;
+    @Bind(R.id.bLogin)Button mLogin;
     @Bind(R.id.etUsername) EditText mUsername;
     @Bind(R.id.etPassword) EditText mPassword;
+    @Bind(R.id.tvRegisterLink) TextView mRegisterLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        mbLogin.setOnClickListener(this);
+        mLogin.setOnClickListener(this);
+        mRegisterLink.setOnClickListener(this);
     }
 
 
@@ -28,6 +31,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bLogin:
+
+
+                break;
+
+            case R.id.tvRegisterLink:
+                startActivity(new Intent(this, Register.class));
                 break;
         }
     }
