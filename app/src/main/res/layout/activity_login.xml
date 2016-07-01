@@ -29,9 +29,8 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/blogin"
+        android:id="@+id/bLogin"
         android:text="Login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       />/// android:text="@string/send" />
+        android:layout_height="wrap_content" />
 </LinearLayout>
