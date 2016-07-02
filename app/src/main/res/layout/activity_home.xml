@@ -34,7 +34,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp;dp"
+        android:textSize="15dp"
         android:text="Find"
         android:id="@+id/bFind"
         android:layout_alignParentBottom="true"
