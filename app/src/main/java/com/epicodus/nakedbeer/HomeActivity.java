@@ -1,5 +1,6 @@
 package com.epicodus.nakedbeer;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,11 +14,6 @@ import butterknife.ButterKnife;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.BeerInput) EditText mBeerInput;
     @Bind(R.id.bFind)Button mFindBeer;
-
-    public static final String TAG = HomeActivity.class.getSimpleName();
-
-
-
 
 
     @Override
@@ -33,7 +29,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         String beer = mBeerInput.getText().toString();
-        Log.d(TAG, beer);
+        Intent intent = new Intent(HomeActivity.this, BeersActivity.class);
+        intent.putExtra("beer",beer);
+        startActivity(intent);
         //switch (view.getId()){
             //case R.id.bRegister:
                 //break;
