@@ -26,7 +26,13 @@
         <activity
             android:name=".HomeActivity"
             android:theme="@style/NoActionBarTheme"></activity>
-        <activity android:name=".BeersActivity"></activity>
+        <activity
+            android:name=".BeersActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.nakedbeer.HomeActivity">
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>
