@@ -25,7 +25,7 @@ public class BeersActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String beer = intent.getStringExtra("beer");
-        //mBeers.setText("Here is some information about: " + beer);
+        mBeers.setText("Here is some information about: " + beer);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, beers);
         mListOfBeers.setAdapter(adapter);
 
