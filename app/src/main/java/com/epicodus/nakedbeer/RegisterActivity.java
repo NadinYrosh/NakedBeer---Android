@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.etName) EditText mName;
     @Bind(R.id.etUsername) EditText mUserName;
     @Bind(R.id.etPassword) EditText mPassword;
-    //private TextView mAppNameTextView;
+    @Bind(R.id.logoText)TextView mLogoText;
 
 
     @Override
@@ -28,8 +28,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 
-       // Typeface FFF = Typeface.createFromAsset(getAssets(), "fonts/FFF_Tusj.ttf");
-        //mAppNameTextView.setTypeface(FFF);
+       Typeface FFF_Tusj = Typeface.createFromAsset(getAssets(), "fonts/FFF_Tusj.ttf");
+        mLogoText.setTypeface(FFF_Tusj);
 
         mRegister.setOnClickListener(this);
     }
