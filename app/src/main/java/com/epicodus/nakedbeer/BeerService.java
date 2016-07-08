@@ -1,4 +1,6 @@
 package com.epicodus.nakedbeer;
+import android.util.Log;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -7,13 +9,16 @@ import okhttp3.Request;
 
 
 public class BeerService {
-    public static void findBeer(String styles, Callback callback) {
+    public static final String TAG = BeersActivity.class.getSimpleName();
+
+    public static void findBeerStyles(String userInput, Callback callback) {
 
         OkHttpClient client = new OkHttpClient.Builder().build();
 
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.Base_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.Api_Key_Parameter, styles);
-        String url = urlBuilder.build().toString();
+        String url = Constants.Base_URL + "style?q=" + userInput + "&withDescriptions=y" + "&key=" + Constants.Key;
+
+        Log.v(TAG, url);
+
 
         Request request= new Request.Builder()
                 .url(url)
@@ -22,4 +27,6 @@ public class BeerService {
         Call call = client.newCall(request);
         call.enqueue(callback);
     }
+
+
 }

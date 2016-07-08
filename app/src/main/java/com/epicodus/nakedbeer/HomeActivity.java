@@ -35,9 +35,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        String beer = mBeerInput.getText().toString();
+        String userInput = mBeerInput.getText().toString();
         Intent intent = new Intent(HomeActivity.this, BeersActivity.class);
-        intent.putExtra("beer",beer);
+        intent.putExtra("userInput", userInput);
         startActivity(intent);
         //switch (view.getId()){
             //case R.id.bRegister:
