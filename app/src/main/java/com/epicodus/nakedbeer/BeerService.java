@@ -1,15 +1,22 @@
 package com.epicodus.nakedbeer;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.Response;
 
 
 public class BeerService {
-    public static final String TAG = BeersActivity.class.getSimpleName();
+    public static final String TAG = BeerService.class.getSimpleName();
 
     public static void findBeerStyles(String userInput, Callback callback) {
 
@@ -28,5 +35,29 @@ public class BeerService {
         call.enqueue(callback);
     }
 
+    public ArrayList<BeerStyle> processResults(Response response) {
+        ArrayList<BeerStyle> beerStyles = new ArrayList<>();
 
+        try{
+            String jsonData = response.body().string();
+            if (response.isSuccessful()) {
+                JSONObject bdbJSON = new JSONObject(jsonData);
+                JSONArray dataJSON = bdbJSON.getJSONArray("data");
+                for (int i = 0; i < dataJSON.length(); i++){
+                    JSONObject styleJSON = dataJSON.getJSONObject(i);
+                    String styleName = styleJSON.getJSONObject("name").toString();
+                    BeerStyle beer = new BeerStyle(styleName);
+                    beerStyles.add(beer);
+
+                    Log.v(TAG, styleName);
+                }
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return beerStyles;
+    }
 }
