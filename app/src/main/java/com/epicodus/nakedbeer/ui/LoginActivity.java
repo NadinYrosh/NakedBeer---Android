@@ -1,4 +1,4 @@
-package com.epicodus.nakedbeer;
+package com.epicodus.nakedbeer.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.epicodus.nakedbeer.R;
+
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -35,7 +39,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         switch (view.getId()){
             case R.id.bLogin:
-
 
                 break;
 

@@ -1,4 +1,4 @@
-package com.epicodus.nakedbeer;
+package com.epicodus.nakedbeer.models;
 
 
 public class BeerStyle {

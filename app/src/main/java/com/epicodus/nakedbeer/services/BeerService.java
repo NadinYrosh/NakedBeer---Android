@@ -1,5 +1,8 @@
-package com.epicodus.nakedbeer;
+package com.epicodus.nakedbeer.services;
 import android.util.Log;
+
+import com.epicodus.nakedbeer.Constants;
+import com.epicodus.nakedbeer.models.BeerStyle;
 
 import org.json.JSONArray;
 import org.json.JSONException;

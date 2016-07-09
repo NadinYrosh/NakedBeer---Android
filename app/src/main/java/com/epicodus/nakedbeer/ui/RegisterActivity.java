@@ -1,4 +1,4 @@
-package com.epicodus.nakedbeer;
+package com.epicodus.nakedbeer.ui;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.epicodus.nakedbeer.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

@@ -1,4 +1,4 @@
-package com.epicodus.nakedbeer;
+package com.epicodus.nakedbeer.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.epicodus.nakedbeer.R;
+import com.epicodus.nakedbeer.models.BeerStyle;
+import com.epicodus.nakedbeer.services.BeerService;
 
 import java.io.IOException;
 import java.util.ArrayList;
