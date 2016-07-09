@@ -44,8 +44,11 @@ public class BeerService {
                 JSONObject bdbJSON = new JSONObject(jsonData);
                 JSONArray dataJSON = bdbJSON.getJSONArray("data");
                 for (int i = 0; i < dataJSON.length(); i++){
+
                     JSONObject styleJSON = dataJSON.getJSONObject(i);
-                    String styleName = styleJSON.getJSONObject("name").toString();
+
+                    String styleName = styleJSON.getString("name"); //not getting the mane...returns object.
+
                     BeerStyle beer = new BeerStyle(styleName);
                     beerStyles.add(beer);
 
