@@ -3,6 +3,8 @@ package com.epicodus.nakedbeer.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.epicodus.nakedbeer.R;
+import com.epicodus.nakedbeer.adapters.StyleListAdapter;
 import com.epicodus.nakedbeer.models.BeerStyle;
 import com.epicodus.nakedbeer.services.BeerService;
 
@@ -27,7 +30,8 @@ import okhttp3.Response;
 public class BeersActivity extends AppCompatActivity {
     public static final String TAG = BeersActivity.class.getSimpleName();
 
-    @Bind(R.id.bStylesList)ListView mStylesList;
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    private StyleListAdapter mAdapter;
 
     public ArrayList<BeerStyle> mBeerStyles = new ArrayList<>();
 
@@ -54,37 +58,43 @@ public class BeersActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(Call call, Response response) {
                 mBeerStyles = beerService.processResults(response);
 
                 BeersActivity.this.runOnUiThread(new Runnable() {
+
                     @Override
                     public void run() {
+                        mAdapter = new StyleListAdapter(getApplicationContext(), mBeerStyles);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BeersActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
+
+
+
 
                         String[] styleNames = new String[mBeerStyles.size()];
                         for (int i = 0; i < styleNames.length; i++) {
                             styleNames[i] = mBeerStyles.get(i).getStyleName();
                         }
 
-                        ArrayAdapter adapter = new ArrayAdapter(BeersActivity.this,
-                                android.R.layout.simple_list_item_1, styleNames);
-                        mStylesList.setAdapter(adapter);
 
                         for (BeerStyle beerStyle : mBeerStyles) {
                             Log.v(TAG, "Name" + beerStyle.getStyleName());
                         }
                     }
                 });
-//                try {
-//                    String jsonData = response.body().string();
-//                    if (response.isSuccessful()) {
-//                        Log.v(TAG, jsonData);
-//
-//                    }
-//                    Log.v(TAG, jsonData);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    String jsonData = response.body().string();
+                    if (response.isSuccessful()) {
+                        Log.v(TAG, jsonData);
+
+                    }
+                    Log.v(TAG, jsonData);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
