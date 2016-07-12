@@ -50,12 +50,14 @@ public class BeerService {
 
                     JSONObject styleJSON = dataJSON.getJSONObject(i);
 
-                    String styleName = styleJSON.getString("name"); //not getting the mane...returns object.
+                    String styleName = styleJSON.getString("name");
+                    String description = styleJSON.getString("description");
 
-                    BeerStyle beer = new BeerStyle(styleName);
-                    beerStyles.add(beer);
 
-                    Log.v(TAG, styleName);
+                    BeerStyle beerStyle = new BeerStyle(styleName, description);
+                    beerStyles.add(beerStyle);
+
+                    Log.v(TAG, description);
                 }
 
             }

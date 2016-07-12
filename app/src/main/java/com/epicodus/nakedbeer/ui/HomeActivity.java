@@ -2,10 +2,8 @@ package com.epicodus.nakedbeer.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.annotation.BinderThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +36,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         String userInput = mBeerInput.getText().toString();
-        Intent intent = new Intent(HomeActivity.this, BeersActivity.class);
+        Intent intent = new Intent(HomeActivity.this, BeersStyleActivity.class);
         intent.putExtra("userInput", userInput);
         startActivity(intent);
         //switch (view.getId()){
