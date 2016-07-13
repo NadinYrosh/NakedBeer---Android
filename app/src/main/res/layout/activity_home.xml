@@ -47,10 +47,12 @@
         android:id="@+id/BeerInput"
         android:background="@color/colorTextIcons"
         android:padding="10dp"
-        android:hint="Enter beer name"
+        android:hint="Search for style of beer like: Ale"
         android:layout_marginBottom="121dp"
         android:layout_alignBottom="@+id/imageView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:singleLine="true" />
 
 
 
