@@ -59,7 +59,7 @@ public class StyleListAdapter extends RecyclerView.Adapter<StyleListAdapter.Styl
 
         public void bindStyle(BeerStyle beerStyle) {
             mStyleNameTextView.setText(beerStyle.getStyleName());
-            //mDescriptionNameTextView.setText(beerStyle.getDescription());
+            mDescriptionNameTextView.setText(beerStyle.getDescription());
         }
     }
 }

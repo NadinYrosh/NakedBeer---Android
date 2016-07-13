@@ -27,9 +27,6 @@ public class BeerService {
 
         String url = Constants.Base_URL + "style?q=" + userInput + "&withDescriptions=y" + "&key=" + Constants.Key;
 
-        Log.v(TAG, url);
-
-
         Request request= new Request.Builder()
                 .url(url)
                 .build();

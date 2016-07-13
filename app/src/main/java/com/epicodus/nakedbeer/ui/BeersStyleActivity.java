@@ -25,8 +25,8 @@ public class BeersStyleActivity extends AppCompatActivity {
     public static final String TAG = BeersStyleActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    private StyleListAdapter mAdapter;
 
+    private StyleListAdapter mAdapter;
     public ArrayList<BeerStyle> mBeerStyles = new ArrayList<>();
 
     @Override
@@ -43,7 +43,6 @@ public class BeersStyleActivity extends AppCompatActivity {
 
     private void getBeerStyles(String styles) {
         final BeerService beerService = new BeerService();
-
         beerService.findBeerStyles(styles, new Callback() {
 
             @Override
@@ -60,13 +59,11 @@ public class BeersStyleActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         mAdapter = new StyleListAdapter(getApplicationContext(), mBeerStyles);
+
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BeersStyleActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
-
-
-
 
 //                        String[] styleNames = new String[mBeerStyles.size()];
 //                        for (int i = 0; i < styleNames.length; i++) {
