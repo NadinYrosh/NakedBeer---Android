@@ -1,6 +1,8 @@
 package com.epicodus.nakedbeer.models;
 
+import org.parceler.Parcel;
 
+@Parcel
 public class BeerStyle {
     private String mName;
     private String mDescription;
