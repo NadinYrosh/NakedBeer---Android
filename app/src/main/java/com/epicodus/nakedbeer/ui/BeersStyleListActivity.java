@@ -21,8 +21,8 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class BeersStyleActivity extends AppCompatActivity {
-    public static final String TAG = BeersStyleActivity.class.getSimpleName();
+public class BeersStyleListActivity extends AppCompatActivity {
+    public static final String TAG = BeersStyleListActivity.class.getSimpleName();
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
@@ -54,14 +54,14 @@ public class BeersStyleActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 mBeerStyles = beerService.processResults(response);
 
-                BeersStyleActivity.this.runOnUiThread(new Runnable() {
+                BeersStyleListActivity.this.runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
                         mAdapter = new StyleListAdapter(getApplicationContext(), mBeerStyles);
 
                         mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BeersStyleActivity.this);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BeersStyleListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
 
@@ -69,8 +69,6 @@ public class BeersStyleActivity extends AppCompatActivity {
 //                        for (int i = 0; i < styleNames.length; i++) {
 //                            styleNames[i] = mBeerStyles.get(i).getStyleName();
 //                        }
-
-
 //                        for (BeerStyle beerStyle : mBeerStyles) {
 //                            Log.v(TAG, "Name" + beerStyle.getStyleName());
 //                        }
