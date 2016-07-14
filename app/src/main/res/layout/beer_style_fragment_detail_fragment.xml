@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.epicodus.nakedbeer.ui.DetailFragmenteerStyle">
+    tools:context="com.epicodus.nakedbeer.ui.BeerStyleDetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Beer style Name"
-                android:id="@+id/restaurantNameTextView"
+                android:id="@+id/styleNameTextView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textSize="20sp"
@@ -61,8 +61,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="  Send it to a friend "
-                    android:id="@+id/TextView"
+                    android:id="@+id/sendTextView"
                     android:drawableLeft="@drawable/ic_send_white_24dp"
+                    android:drawablePadding="4dp"
+                    android:textColor="@color/colorTextIcons"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description : "
+                    android:id="@+id/descriptionTextView"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
