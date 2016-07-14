@@ -7,6 +7,8 @@ public class BeerStyle {
     private String mName;
     private String mDescription;
 
+    public BeerStyle() {}
+
     public BeerStyle(String styleName, String description) {
         this.mName = styleName;
         this.mDescription = description;
