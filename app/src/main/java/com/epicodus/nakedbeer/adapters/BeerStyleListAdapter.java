@@ -17,17 +17,17 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class StyleListAdapter extends RecyclerView.Adapter<StyleListAdapter.StyleViewHolder> {
+public class BeerStyleListAdapter extends RecyclerView.Adapter<BeerStyleListAdapter.StyleViewHolder> {
     private ArrayList<BeerStyle> mBeerStyles = new ArrayList<>();
     private Context mContext;
 
-    public StyleListAdapter(Context context, ArrayList<BeerStyle> beerStyles) {
+    public BeerStyleListAdapter(Context context, ArrayList<BeerStyle> beerStyles) {
         mContext = context;
         mBeerStyles = beerStyles;
     }
 
     @Override
-    public StyleListAdapter.StyleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BeerStyleListAdapter.StyleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.beer_style_list_item, parent, false);
 
         StyleViewHolder viewHolder = new StyleViewHolder(view);
@@ -35,7 +35,7 @@ public class StyleListAdapter extends RecyclerView.Adapter<StyleListAdapter.Styl
     }
 
     @Override
-    public void onBindViewHolder(StyleListAdapter.StyleViewHolder holder, int position) {
+    public void onBindViewHolder(BeerStyleListAdapter.StyleViewHolder holder, int position) {
     holder.bindStyle(mBeerStyles.get(position));
     }
 

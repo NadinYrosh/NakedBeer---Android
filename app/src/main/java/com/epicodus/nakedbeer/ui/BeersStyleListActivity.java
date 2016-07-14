@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.epicodus.nakedbeer.R;
-import com.epicodus.nakedbeer.adapters.StyleListAdapter;
+import com.epicodus.nakedbeer.adapters.BeerStyleListAdapter;
 import com.epicodus.nakedbeer.models.BeerStyle;
 import com.epicodus.nakedbeer.services.BeerService;
 
@@ -26,7 +26,7 @@ public class BeersStyleListActivity extends AppCompatActivity {
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
-    private StyleListAdapter mAdapter;
+    private BeerStyleListAdapter mAdapter;
     public ArrayList<BeerStyle> mBeerStyles = new ArrayList<>();
 
     @Override
@@ -58,7 +58,7 @@ public class BeersStyleListActivity extends AppCompatActivity {
 
                     @Override
                     public void run() {
-                        mAdapter = new StyleListAdapter(getApplicationContext(), mBeerStyles);
+                        mAdapter = new BeerStyleListAdapter(getApplicationContext(), mBeerStyles);
 
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BeersStyleListActivity.this);
