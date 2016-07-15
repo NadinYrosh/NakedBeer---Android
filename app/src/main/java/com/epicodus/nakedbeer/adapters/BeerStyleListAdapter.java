@@ -2,6 +2,7 @@ package com.epicodus.nakedbeer.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,9 @@ import android.widget.TextView;
 
 import com.epicodus.nakedbeer.R;
 import com.epicodus.nakedbeer.models.BeerStyle;
+import com.epicodus.nakedbeer.ui.BeerStyleDetailActivity;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -44,7 +48,7 @@ public class BeerStyleListAdapter extends RecyclerView.Adapter<BeerStyleListAdap
         return mBeerStyles.size();
     }
 
-    public class StyleViewHolder extends RecyclerView.ViewHolder {
+    public class StyleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
        @Bind(R.id.styleImageView) ImageView mStyleImageView;
        @Bind(R.id.styleNameTextView) TextView mStyleNameTextView;
        @Bind(R.id.descriptionTextView) TextView mDescriptionNameTextView;
@@ -54,12 +58,23 @@ public class BeerStyleListAdapter extends RecyclerView.Adapter<BeerStyleListAdap
         public StyleViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         public void bindStyle(BeerStyle beerStyle) {
             mStyleNameTextView.setText(beerStyle.getStyleName());
             mDescriptionNameTextView.setText(beerStyle.getDescription());
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, BeerStyleDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("beerStyles", Parcels.wrap(mBeerStyles));
+            mContext.startActivity(intent);
         }
     }
 }
