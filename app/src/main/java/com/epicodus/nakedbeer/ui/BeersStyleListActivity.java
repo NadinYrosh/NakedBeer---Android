@@ -1,12 +1,15 @@
 package com.epicodus.nakedbeer.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.epicodus.nakedbeer.Constants;
 import com.epicodus.nakedbeer.R;
 import com.epicodus.nakedbeer.adapters.BeerStyleListAdapter;
 import com.epicodus.nakedbeer.models.BeerStyle;
@@ -23,6 +26,8 @@ import okhttp3.Response;
 
 public class BeersStyleListActivity extends AppCompatActivity {
     public static final String TAG = BeersStyleListActivity.class.getSimpleName();
+    private SharedPreferences mSharedPreferences;
+    private String mRecentStyle;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
@@ -39,6 +44,10 @@ public class BeersStyleListActivity extends AppCompatActivity {
         String styles = intent.getStringExtra("userInput");
 
         getBeerStyles(styles);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentStyle = mSharedPreferences.getString(Constants.PREFERENCES_BEERSTYLE_KEY, null);
+        Log.d("Shared Pref Style", mRecentStyle);
     }
 
     private void getBeerStyles(String styles) {

@@ -4,40 +4,40 @@ import org.parceler.Parcel;
 
 @Parcel
 public class BeerStyle {
-    private String Name;
-    private String Description;
-    private String ABV;
-    private String SRM;
-    private String IBU;
+    private String mName;
+    private String mDescription;
+    private String mABV;
+    private String mSRM;
+    private String mIBU;
 
     public BeerStyle() {}
 
     public BeerStyle(String styleName, String description) {
-        this.Name = styleName;
-        this.Description = description;
-//        this.ABV = ABV;
-//        this.SRM = SRM;
-//        this.IBU = IBU;
+        this.mName = styleName;
+        this.mDescription = description;
+//        this.mABV = ABV;
+//        this.mSRM = SRM;
+//        this.mIBU = IBU;
     }
 
     public String getStyleName() {
-        return Name;
+        return mName;
     }
 
     public String getDescription() {
-        return Description;
+        return mDescription;
     }
 
 //    public String getABV() {
-//        return ABV;
+//        return mABV;
 //    }
 //
 //    public String getSRM() {
-//        return ABV;
+//        return mABV;
 //    }
 //
 //    public String getIBU() {
-//        return ABV;
+//        return mABV;
 //    }
 
 }
