@@ -64,14 +64,6 @@ public class BeersStyleListActivity extends AppCompatActivity {
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(BeersStyleListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
-
-//                        String[] styleNames = new String[mBeerStyles.size()];
-//                        for (int i = 0; i < styleNames.length; i++) {
-//                            styleNames[i] = mBeerStyles.get(i).getStyleName();
-//                        }
-//                        for (BeerStyle beerStyle : mBeerStyles) {
-//                            Log.v(TAG, "Name" + beerStyle.getStyleName());
-//                        }
                     }
                 });
                 try {
