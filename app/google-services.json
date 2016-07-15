@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "308540083776",
+    "firebase_url": "https://nakedbeer-6c83f.firebaseio.com",
+    "project_id": "nakedbeer-6c83f",
+    "storage_bucket": "nakedbeer-6c83f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308540083776:android:300d9c3ec3f77288",
+        "android_client_info": {
+          "package_name": "com.epicodus.nakedbeer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308540083776-sobni0n7keaeturqtkuc8750lfiot8sg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.nakedbeer",
+            "certificate_hash": "402CEF82162AACC4F9ECA349F7F41B30F9DD894B"
+          }
+        },
+        {
+          "client_id": "308540083776-vhua8e7gcmc91lch65bj5ft408vlct9i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCxZecqo1cZItXBspAIZ4epNDv7e8N4kA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308540083776-vhua8e7gcmc91lch65bj5ft408vlct9i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
