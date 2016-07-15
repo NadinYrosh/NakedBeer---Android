@@ -8,7 +8,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,11 +36,12 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/background_material_dark">
+            android:layout_height="253dp"
+            android:background="@color/background_material_dark"
+            android:layout_weight="1.03">
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -72,27 +74,25 @@
                         android:id="@+id/descriptionTextView"
                         android:drawablePadding="4dp"
                         android:textColor="@color/colorTextIcons"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textStyle="normal|italic"
                         android:layout_marginBottom="10dp"
-                        android:gravity="center"
+                        android:gravity="fill_horizontal|left|center|start|end|right|fill"
                         android:textIsSelectable="true" />
                 </LinearLayout>
             </ScrollView>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Save it to Fav!"
-                android:id="@+id/saveButton"
-                android:background="@color/colorAccent"
-                android:textColor="@color/colorTextIcons"
-                android:textSize="15sp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true" />
-
-
         </RelativeLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save it to Fav!"
+            android:id="@+id/saveButton"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
     </LinearLayout>
 
 
