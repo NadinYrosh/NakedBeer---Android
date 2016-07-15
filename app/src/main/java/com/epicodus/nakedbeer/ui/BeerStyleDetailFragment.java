@@ -9,9 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.epicodus.nakedbeer.Constants;
 import com.epicodus.nakedbeer.R;
 import com.epicodus.nakedbeer.models.BeerStyle;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.parceler.Parcels;
 
@@ -20,7 +24,6 @@ import butterknife.ButterKnife;
 
 public class BeerStyleDetailFragment extends Fragment implements View.OnClickListener{
     @Bind(R.id.styleNameTextView) TextView mStyleName;
-    @Bind(R.id.sendTextView) TextView mSend;
     @Bind(R.id.saveButton) TextView mSaveButton;
     @Bind(R.id. descriptionTextView) TextView mDescription;
 
@@ -49,8 +52,7 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
 
         mStyleName.setText(mBeerStyle.getStyleName());
         mDescription.setText(mBeerStyle.getDescription());
-
-        mSend.setOnClickListener(this);
+        mSaveButton.setOnClickListener(this);
 
         return view;
     }
@@ -58,5 +60,10 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
        //for  Implicit intents...
+        if (view == mSaveButton) {
+            DatabaseReference beerStyleRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_BEER_STYLES);
+            beerStyleRef.push().setValue(mBeerStyle);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
     }
 }
