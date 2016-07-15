@@ -1,54 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="25dp"
     android:layout_height="match_parent"
-    android:background="@drawable/design_snackbar_background">
+    android:alpha="22"
+    android:baselineAligned="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/background_floating_material_dark">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="Username"
-        android:layout_height="wrap_content"
-        android:textColor="@color/abc_primary_text_disable_only_material_dark" />
-
-    <EditText
-        android:id="@+id/etUsername"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_marginBottom="15dp"
-        android:layout_height="40dp"
-        android:background="#77ffffff"/>
+        android:layout_height="match_parent"
+        android:src="@drawable/beer"
+        android:id="@+id/imageView"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Password"
-        android:layout_height="wrap_content"
-        android:textColor="@color/abc_primary_text_material_dark"/>
-
-    <EditText
-        android:id="@+id/etPassword"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_marginBottom="15dp"
-        android:inputType="textPassword"
-        android:layout_height="40dp"
-        android:background="#77ffffff"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/bLogin"
-        android:layout_marginBottom="15dp"
-        android:text="Login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFC107"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="150dp"
+            android:text="Username"
+            android:layout_height="wrap_content"
+            android:textColor="@color/abc_primary_text_disable_only_material_dark" />
 
-    <TextView
-        android:id="@+id/tvRegisterLink"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
-        android:text="Register Here"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:textColor="@color/abc_primary_text_material_dark"/>
-</LinearLayout>
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="40dp"
+            android:background="#77ffffff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Password"
+            android:layout_height="wrap_content"
+            android:textColor="@color/abc_primary_text_material_dark"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:inputType="textPassword"
+            android:layout_height="40dp"
+            android:background="#77ffffff"/>
+
+        <Button
+            android:id="@+id/bLogin"
+            android:layout_marginBottom="15dp"
+            android:text="Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFC107"/>
+
+        <TextView
+            android:id="@+id/tvRegisterLink"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:text="Register Here"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/abc_primary_text_material_dark"/>
+    </LinearLayout>
+</RelativeLayout>
