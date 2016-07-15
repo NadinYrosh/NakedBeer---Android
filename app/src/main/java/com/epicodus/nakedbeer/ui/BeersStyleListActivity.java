@@ -40,14 +40,15 @@ public class BeersStyleListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_beers);
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
-        String styles = intent.getStringExtra("userInput");
-
-        getBeerStyles(styles);
+//        Intent intent = getIntent();
+//        String styles = intent.getStringExtra("userInput");
+//        getBeerStyles(styles);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentStyle = mSharedPreferences.getString(Constants.PREFERENCES_BEERSTYLE_KEY, null);
-        Log.d("Shared Pref Style", mRecentStyle);
+        if (mRecentStyle != null) {
+            getBeerStyles(mRecentStyle);
+        };
     }
 
     private void getBeerStyles(String styles) {
