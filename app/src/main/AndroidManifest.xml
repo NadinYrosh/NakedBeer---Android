@@ -27,13 +27,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.HomeActivity"
-            android:theme="@style/NoActionBarTheme"></activity>
+            android:theme="@style/NoActionBarTheme" />
         <activity android:name=".ui.BeersStyleListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity"></meta-data>
+                android:value=".ui.HomeActivity" />
         </activity>
-        <activity android:name=".ui.BeerStyleDetailActivity"></activity>
+        <activity android:name=".ui.BeerStyleDetailActivity" />
+        <activity android:name=".ui.SavedBeerStyeListActivity"></activity>
     </application>
 
 </manifest>
