@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
+import android.support.annotation.BinderThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +25,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.BeerInput) EditText mBeerInput;
     @Bind(R.id.bFind)Button mFindBeerStyle;
     @Bind(R.id.tLogo)TextView mLogo;
-
+    @Bind(R.id.bSaved)Button mSaved;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mEditor = mSharedPreferences.edit();
 
         mFindBeerStyle.setOnClickListener(this);
+        mSaved.setOnClickListener(this);
 
         Typeface FFF_Tusj = Typeface.createFromAsset(getAssets(), "fonts/FFF_Tusj.ttf");
         mLogo.setTypeface(FFF_Tusj);
@@ -51,6 +53,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             }
             Intent intent = new Intent(HomeActivity.this, BeersStyleListActivity.class);
 //            intent.putExtra("userInput", userInput);
+            startActivity(intent);
+        }
+        if(view == mSaved) {
+            Intent intent = new Intent(HomeActivity.this, SavedBeerStyeListActivity.class);
             startActivity(intent);
         }
 
