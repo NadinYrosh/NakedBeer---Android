@@ -38,10 +38,7 @@ public class FirebaseBeerStyleViewHolder extends RecyclerView.ViewHolder impleme
 
         beerStyleNameTextView.setText(beerStyle.getStyleName());
         descriptionTextView.setText(beerStyle.getDescription());
-
     }
-
-
 
     @Override
     public void onClick(View view) {
