@@ -26,12 +26,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_marginTop="150dp"
-            android:text="Username"
+            android:text="Email"
             android:layout_height="wrap_content"
             android:textColor="@color/abc_primary_text_disable_only_material_dark" />
 
         <EditText
-            android:id="@+id/etUsername"
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_marginBottom="15dp"
             android:layout_height="40dp"
@@ -44,7 +44,7 @@
             android:textColor="@color/abc_primary_text_material_dark"/>
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_marginBottom="15dp"
             android:inputType="textPassword"

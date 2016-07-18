@@ -17,11 +17,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.bRegister)Button mRegister;
-    @Bind(R.id.etName) EditText mName;
-    @Bind(R.id.etUsername) EditText mUserName;
-    @Bind(R.id.etPassword) EditText mPassword;
-    @Bind(R.id.logoText)TextView mLogoText;
+    @Bind(R.id.logoText) TextView mLogoText;
+    @Bind(R.id.nameEditText) EditText mName;
+    @Bind(R.id.emailEditText) EditText mEmail;
+    @Bind(R.id.passwordEditText) EditText mPassword;
+    @Bind(R.id.confirmPasswordEditText)EditText mPasswordConfirm;
+    @Bind(R.id.createUserButton)Button mCreateUser;
 
 
     @Override
@@ -33,13 +34,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
        Typeface FFF_Tusj = Typeface.createFromAsset(getAssets(), "fonts/FFF_Tusj.ttf");
         mLogoText.setTypeface(FFF_Tusj);
 
-        mRegister.setOnClickListener(this);
+        mCreateUser.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.bRegister:
+            case R.id.createUserButton:
                 break;
         }
     }

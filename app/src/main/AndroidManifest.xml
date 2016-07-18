@@ -10,13 +10,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.LoginActivity">
+        <activity
+            android:name=".ui.LoginActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
         <activity
             android:name=".ui.LogoutActivity"
             android:label="MainActivity"
@@ -28,13 +32,16 @@
         <activity
             android:name=".ui.HomeActivity"
             android:theme="@style/NoActionBarTheme" />
+
         <activity android:name=".ui.BeersStyleListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.HomeActivity" />
         </activity>
+
         <activity android:name=".ui.BeerStyleDetailActivity" />
         <activity android:name=".ui.SavedBeerStyeListActivity"></activity>
+
     </application>
 
 </manifest>

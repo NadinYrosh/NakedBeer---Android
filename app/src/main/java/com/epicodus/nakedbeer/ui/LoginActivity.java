@@ -15,10 +15,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.bLogin)Button mLogin;
-    @Bind(R.id.etUsername) EditText mUsername;
-    @Bind(R.id.etPassword) EditText mPassword;
+    @Bind(R.id.emailEditText) EditText mEmail;
+    @Bind(R.id.passwordEditText) EditText mPassword;
     @Bind(R.id.tvRegisterLink) TextView mRegisterLink;
+    @Bind(R.id.bLogin)Button mLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
