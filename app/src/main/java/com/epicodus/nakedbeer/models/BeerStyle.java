@@ -4,8 +4,8 @@ import org.parceler.Parcel;
 
 @Parcel
 public class BeerStyle {
-    private String Name;
-    private String Description;
+    private String styleName;
+    private String description;
     private String mABV;
     private String mSRM;
     private String mIBU;
@@ -13,19 +13,19 @@ public class BeerStyle {
     public BeerStyle() {}
 
     public BeerStyle(String styleName, String description) {
-        this.Name = styleName;
-        this.Description = description;
+        this.styleName = styleName;
+        this.description = description;
 //        this.mABV = ABV;
 //        this.mSRM = SRM;
 //        this.mIBU = IBU;
     }
 
     public String getStyleName() {
-        return Name;
+        return styleName;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
 //    public String getABV() {
