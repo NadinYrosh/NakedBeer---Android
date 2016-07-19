@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         ButterKnife.bind(this);
 
         mLogin.setOnClickListener(this);
@@ -33,18 +34,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-        startActivity(intent);
-
-
-        switch (view.getId()){
-            case R.id.bLogin:
-
-                break;
-
-            case R.id.tvRegisterLink:
-                startActivity(new Intent(this, RegisterActivity.class));
-                break;
+        if (view == mRegisterLink) {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 }

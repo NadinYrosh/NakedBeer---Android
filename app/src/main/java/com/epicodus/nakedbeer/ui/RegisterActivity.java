@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Bind(R.id.confirmPasswordEditText)EditText mPasswordConfirm;
     @Bind(R.id.createUserButton)Button mCreateUser;
 
-    private FirebaseAuth.AuthStateListener mAuth;
+    private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
 
@@ -51,10 +51,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
        Typeface FFF_Tusj = Typeface.createFromAsset(getAssets(), "fonts/FFF_Tusj.ttf");
 
         mLogoText.setTypeface(FFF_Tusj);
-        mCreateUser.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         createAuthStateListener();
+
+        mCreateUser.setOnClickListener(this);
+
     }
 
     @Override
@@ -103,12 +105,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finish();
-                }
+//                if (user != null) {
+//                    Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                    startActivity(intent);
+//                    finish();
+//                }
             }
 
         };
