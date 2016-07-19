@@ -3,7 +3,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:alpha="22"
     android:baselineAligned="true"
     android:focusableInTouchMode="true"
     android:background="@color/background_floating_material_dark">
@@ -13,7 +12,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/beer"
         android:id="@+id/imageView"
-        android:alpha="0.4"
+        android:alpha="0.8"
         android:scaleType="centerCrop"
         android:layout_alignParentTop="true" />
 

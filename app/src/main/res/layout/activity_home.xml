@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:id="@+id/imageViewHome"
         android:src="@drawable/homepage"
-        android:alpha="0.5"
+        android:alpha="1.0"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"/>
 
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/BeerInput"
-        android:background="@color/colorTextIcons"
+            android:background="#99ffffff"
         android:padding="10dp"
         android:hint="Search for style of beer like: Ale"
             android:textAlignment="center"
@@ -46,7 +46,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="17dp"
         android:text="Find"
         android:id="@+id/bFind"
         android:textColor="@color/colorTextIcons"
@@ -60,7 +60,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="17dp"
         android:text="See my Saved Styles"
         android:id="@+id/bSaved"
         android:textColor="@color/colorTextIcons"
