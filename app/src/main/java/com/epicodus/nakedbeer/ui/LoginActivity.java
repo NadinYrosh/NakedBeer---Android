@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.epicodus.nakedbeer.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 import butterknife.Bind;
@@ -20,6 +21,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.tvRegisterLink) TextView mRegisterLink;
     @Bind(R.id.bLogin)Button mLogin;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mLogin.setOnClickListener(this);
         mRegisterLink.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
     }
 
 
@@ -40,10 +45,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             finish();
         } else {
             if (view == mLogin ) {
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish();
+                loginWithPassword();
             }
+        }
+    }
+
+    private void loginWithPassword() {
+        String email = mEmail.getText().toString().trim();
+        String password = mPassword.getText().toString().trim();
+        if (email.equals("")) {
+            mEmail.setError("Please enter your email");
+            return;
+        }
+        if (password.equals("")) {
+            mPassword.setError("Password cannot be blank");
+            return;
         }
     }
 }
