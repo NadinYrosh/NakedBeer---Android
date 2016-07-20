@@ -27,11 +27,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.RegisterActivity"
-            android:label="@string/title_activity_register"
-            android:theme="@style/NoActionBarTheme"/>
+            android:label="@string/title_activity_register" />
         <activity
-            android:name=".ui.HomeActivity"
-            android:theme="@style/NoActionBarTheme" />
+            android:name=".ui.HomeActivity" />
 
         <activity android:name=".ui.BeersStyleListActivity">
             <meta-data
