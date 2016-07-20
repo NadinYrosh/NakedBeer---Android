@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.annotation.BinderThread;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import com.epicodus.nakedbeer.Constants;
 import com.epicodus.nakedbeer.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -25,6 +27,8 @@ import butterknife.ButterKnife;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Bind(R.id.BeerInput) EditText mBeerInput;
     @Bind(R.id.bFind)Button mFindBeerStyle;
@@ -45,6 +49,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         Typeface FFF_Tusj = Typeface.createFromAsset(getAssets(), "fonts/FFF_Tusj.ttf");
         mLogo.setTypeface(FFF_Tusj);
+
+        mAuth = FirebaseAuth.getInstance();
+            mAuthListener = new FirebaseAuth.AuthStateListener() {
+                @Override
+                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                    FirebaseUser user = firebaseAuth.getCurrentUser();
+                    if (user != null) {
+                        getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
+
+                    } else {
+
+                    }
+                }
+         };
 
     }
 
@@ -71,6 +89,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
     @Override
