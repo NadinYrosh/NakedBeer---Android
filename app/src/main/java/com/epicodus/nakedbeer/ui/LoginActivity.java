@@ -1,5 +1,6 @@
 package com.epicodus.nakedbeer.ui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private ProgressDialog mAuthProgressDialog;
 
     public static final String TAG = LoginActivity.class.getSimpleName();
 
@@ -44,6 +46,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mRegisterLink.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
+        createAuthProgressDialog();
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -84,12 +88,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mPassword.setError("Password cannot be blank");
             return;
         }
-
+        mAuthProgressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        mAuthProgressDialog.dismiss();
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
@@ -99,16 +104,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
     }
+
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Authenticating with Firebase...");
+        mAuthProgressDialog.setCancelable(false);
+    }
+
+
     @Override
     public void onClick(View view) {
         if (view == mRegisterLink) {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
             finish();
+
         } else {
+
             if (view == mLogin ) {
                 loginWithPassword();
             }
         }
+
     }
 }
