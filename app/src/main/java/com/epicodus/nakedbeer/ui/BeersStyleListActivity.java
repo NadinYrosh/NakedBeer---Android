@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.epicodus.nakedbeer.Constants;
 import com.epicodus.nakedbeer.R;
@@ -62,7 +63,16 @@ public class BeersStyleListActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) {
-                mBeerStyles = beerService.processResults(response);
+                if (mBeerStyles.size() == 0 ) {
+                    Intent intent = new Intent(BeersStyleListActivity.this, BadEntryActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+
+                    mBeerStyles = beerService.processResults(response);
+                }
+
+                Log.v(TAG, Integer.toString(mBeerStyles.size()));
 
                 BeersStyleListActivity.this.runOnUiThread(new Runnable() {
 
@@ -76,17 +86,22 @@ public class BeersStyleListActivity extends AppCompatActivity {
                         mRecyclerView.setHasFixedSize(true);
                     }
                 });
-                try {
-                    String jsonData = response.body().string();
-                    if (response.isSuccessful()) {
-                        Log.v(TAG, jsonData);
-
-                    }
-                    Log.v(TAG, jsonData);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                Log.v(TAG, "LOG FOR THE BODY" + response.body().toString());
+//                try {
+//                    String jsonData = response.body().string();
+//                    if (response.isSuccessful()) {
+//                        Log.v(TAG, jsonData);
+//
+//                    }
+//                    Log.v(TAG, jsonData);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
             }
         });
     }
 }
+
+//    JSONObject responseJSON = new JSONObject(jsonData);
+//! responseJSON.has("totalResults");
+
