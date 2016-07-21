@@ -10,6 +10,8 @@ import com.epicodus.nakedbeer.Constants;
 import com.epicodus.nakedbeer.R;
 import com.epicodus.nakedbeer.models.BeerStyle;
 import com.epicodus.nakedbeer.ui.BeerStyleDetailActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,7 +45,10 @@ public class FirebaseBeerStyleViewHolder extends RecyclerView.ViewHolder impleme
     @Override
     public void onClick(View view) {
         final ArrayList<BeerStyle> beerStyles = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_BEER_STYLES);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_BEER_STYLES).child(uid);
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override

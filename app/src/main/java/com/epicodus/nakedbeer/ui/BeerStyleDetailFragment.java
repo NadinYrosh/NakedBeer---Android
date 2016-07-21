@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.epicodus.nakedbeer.Constants;
 import com.epicodus.nakedbeer.R;
 import com.epicodus.nakedbeer.models.BeerStyle;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -61,8 +63,19 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
     public void onClick(View view) {
        //for  Implicit intents...
         if (view == mSaveButton) {
-            DatabaseReference beerStyleRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_BEER_STYLES);
-            beerStyleRef.push().setValue(mBeerStyle);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+
+            DatabaseReference beerStyleRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_BEER_STYLES)
+                    .child(uid);;
+
+            DatabaseReference pushRef = beerStyleRef.push();
+            String pushId = pushRef.getKey();
+            mBeerStyle.setPushId(pushId);
+            pushRef.setValue(mBeerStyle);
+
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }

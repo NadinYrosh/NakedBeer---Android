@@ -9,6 +9,7 @@ public class BeerStyle {
     private String mABV;
     private String mSRM;
     private String mIBU;
+    private String pushId;
 
     public BeerStyle() {}
 
@@ -39,5 +40,13 @@ public class BeerStyle {
 //    public String getIBU() {
 //        return mABV;
 //    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 
 }
