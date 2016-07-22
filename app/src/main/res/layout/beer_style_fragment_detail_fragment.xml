@@ -30,7 +30,44 @@
                 android:textSize="20sp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
+        </RelativeLayout>
 
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="ABV: "
+                android:id="@+id/abvTextView"
+                android:textColor="@color/colorAccent"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="SRM: "
+                android:id="@+id/srmTextView"
+                android:textColor="@color/colorAccent"
+                android:paddingLeft="100dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="IBU: "
+                android:id="@+id/ibuTextView"
+                android:textColor="@color/colorAccent"
+                android:paddingLeft="200dp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -67,22 +104,6 @@
                         <!--android:layout_marginBottom="10dp"-->
                         <!--android:gravity="center" />-->
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="45dp"
-                            android:text="abv"
-                            android:id="@+id/abvTextView"
-                            android:textColor="@color/colorAccent" />
-
-                    </LinearLayout>
 
                     <TextView
                         android:layout_width="333dp"
@@ -103,7 +124,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save it to Fav!"
+            android:text="Save it to Favs!"
             android:id="@+id/saveButton"
             android:background="@color/colorAccent"
             android:textColor="@color/colorTextIcons"

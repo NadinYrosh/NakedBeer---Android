@@ -29,6 +29,8 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
     @Bind(R.id.saveButton) TextView mSaveButton;
     @Bind(R.id. descriptionTextView) TextView mDescription;
     @Bind(R.id.abvTextView) TextView mABV;
+    @Bind(R.id.srmTextView) TextView mSRM;
+    @Bind(R.id.ibuTextView) TextView mIBU;
 
 
     private BeerStyle  mBeerStyle;
@@ -57,6 +59,8 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
         mStyleName.setText(mBeerStyle.getStyleName());
         mDescription.setText(mBeerStyle.getDescription());
         mABV.setText("ABV: " + Double.toString(mBeerStyle.getABV()));
+        mSRM.setText("SRM: " + Double.toString(mBeerStyle.getSRM()));
+        mIBU.setText("IBU: " + Double.toString(mBeerStyle.getIBU()));
         //call other params from API
 
 
