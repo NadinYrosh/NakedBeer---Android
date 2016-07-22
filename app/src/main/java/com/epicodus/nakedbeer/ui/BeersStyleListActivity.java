@@ -63,19 +63,16 @@ public class BeersStyleListActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) {
+                mBeerStyles = beerService.processResults(response);
                 if (mBeerStyles.size() == 0 ) {
                     Intent intent = new Intent(BeersStyleListActivity.this, BadEntryActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
-
-                    mBeerStyles = beerService.processResults(response);
                 }
-
                 Log.v(TAG, Integer.toString(mBeerStyles.size()));
 
                 BeersStyleListActivity.this.runOnUiThread(new Runnable() {
-
                     @Override
                     public void run() {
                         mAdapter = new BeerStyleListAdapter(getApplicationContext(), mBeerStyles);
