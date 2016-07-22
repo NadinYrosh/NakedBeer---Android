@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
+            android:layout_marginBottom="2dp"
             android:paddingTop="20dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -37,10 +38,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
+            android:background="@android:color/white">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,6 +47,7 @@
                 android:id="@+id/abvTextView"
                 android:textColor="@color/colorAccent"
                 android:paddingLeft="10dp"
+                android:layout_marginTop="15dp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -58,27 +57,28 @@
                 android:id="@+id/srmTextView"
                 android:textColor="@color/colorAccent"
                 android:paddingLeft="100dp"
+                android:layout_marginTop="15dp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:text="IBU: "
                 android:id="@+id/ibuTextView"
                 android:textColor="@color/colorAccent"
                 android:paddingLeft="200dp"
+                android:layout_marginTop="15dp"
                 android:textStyle="bold" />
 
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:text="Info"
                 android:id="@+id/infoTextView"
                 android:drawableLeft="@drawable/ic_help_outline_black_24dp"
-                android:drawablePadding="4dp"
                 android:textColor="@color/colorTextIcons"
-                android:paddingLeft="300dp"/>
+                android:paddingLeft="360dp" />
 
         </RelativeLayout>
 

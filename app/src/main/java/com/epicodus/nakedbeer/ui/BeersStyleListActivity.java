@@ -99,6 +99,3 @@ public class BeersStyleListActivity extends AppCompatActivity {
     }
 }
 
-//    JSONObject responseJSON = new JSONObject(jsonData);
-//! responseJSON.has("totalResults");
-

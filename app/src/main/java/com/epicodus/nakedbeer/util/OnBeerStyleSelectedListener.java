@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 
 public class OnBeerStyleSelectedListener {
-    public void onBeerStyleSelected(Integer position, ArrayList<BeerStyle> beerStyles);
+
 }

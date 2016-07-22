@@ -69,11 +69,13 @@ public class BeerStyleListAdapter extends RecyclerView.Adapter<BeerStyleListAdap
             mStyleNameTextView.setText(beerStyle.getStyleName());
             mDescriptionNameTextView.setText(beerStyle.getDescription());
 
+            //random image generator
             TypedArray imgs = mContext.getResources().obtainTypedArray(R.array.random_images_array);
             Random random = new Random();
             int rndInt = random.nextInt(imgs.length());
             int resID = imgs.getResourceId(rndInt, 0);
             mStyleImageView.setImageResource(resID);
+
         }
 
         @Override

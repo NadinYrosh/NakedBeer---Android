@@ -33,7 +33,6 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
     @Bind(R.id.ibuTextView) TextView mIBU;
     @Bind(R.id.infoTextView) TextView mInfoIcon;
 
-
     private BeerStyle  mBeerStyle;
 
     public BeerStyleDetailFragment() {}
@@ -59,12 +58,12 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
 
         mInfoIcon.setOnClickListener(this);
 
+        //call params from API
         mStyleName.setText(mBeerStyle.getStyleName());
         mDescription.setText(mBeerStyle.getDescription());
         mABV.setText("ABV: " + Double.toString(mBeerStyle.getABV()) + " %");
         mSRM.setText("SRM: " + Double.toString(mBeerStyle.getSRM()));
         mIBU.setText("IBU: " + Double.toString(mBeerStyle.getIBU()));
-        //call other params from API
 
 
         mSaveButton.setOnClickListener(this);
@@ -97,7 +96,3 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
         }
     }
 }
-
-
-//                        mCategoriesLabel.setText(android.text.TextUtils.join(", ", mRestaurant.getCategories()));
-//                        mRatingLabel.setText(Double.toString(mRestaurant.getRating()) + "/5");

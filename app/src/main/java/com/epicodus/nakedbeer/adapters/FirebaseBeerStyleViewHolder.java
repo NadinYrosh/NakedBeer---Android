@@ -2,8 +2,10 @@ package com.epicodus.nakedbeer.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.nakedbeer.Constants;
@@ -21,15 +23,23 @@ import com.google.firebase.database.ValueEventListener;
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class FirebaseBeerStyleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     View mView;
     Context mContext;
+    @Bind(R.id.styleImageView)
+    ImageView mStyleImageView;
+
 
     public FirebaseBeerStyleViewHolder(View itemView) {
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(this);
     }
 
@@ -40,6 +50,14 @@ public class FirebaseBeerStyleViewHolder extends RecyclerView.ViewHolder impleme
 
         beerStyleNameTextView.setText(beerStyle.getStyleName());
         descriptionTextView.setText(beerStyle.getDescription());
+
+        //random image generator for saved list
+        TypedArray imgs = mContext.getResources().obtainTypedArray(R.array.random_images_array);
+        Random random = new Random();
+        int rndInt = random.nextInt(imgs.length());
+        int resID = imgs.getResourceId(rndInt, 0);
+        mStyleImageView.setImageResource(resID);
+
     }
 
     @Override
