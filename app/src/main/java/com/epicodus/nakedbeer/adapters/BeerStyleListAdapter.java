@@ -3,6 +3,7 @@ package com.epicodus.nakedbeer.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.epicodus.nakedbeer.ui.BeerStyleDetailActivity;
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -66,6 +68,12 @@ public class BeerStyleListAdapter extends RecyclerView.Adapter<BeerStyleListAdap
         public void bindStyle(BeerStyle beerStyle) {
             mStyleNameTextView.setText(beerStyle.getStyleName());
             mDescriptionNameTextView.setText(beerStyle.getDescription());
+
+            TypedArray imgs = mContext.getResources().obtainTypedArray(R.array.random_images_array);
+            Random random = new Random();
+            int rndInt = random.nextInt(imgs.length());
+            int resID = imgs.getResourceId(rndInt, 0);
+            mStyleImageView.setImageResource(resID);
         }
 
         @Override
