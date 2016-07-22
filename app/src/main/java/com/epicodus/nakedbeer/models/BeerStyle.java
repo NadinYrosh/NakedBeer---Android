@@ -34,11 +34,11 @@ public class BeerStyle {
     }
 
     public double getSRM() {
-        return ibu;
+        return srm;
     }
 
     public double getIBU() {
-        return abv;
+        return ibu;
     }
 
     public String getPushId() {
