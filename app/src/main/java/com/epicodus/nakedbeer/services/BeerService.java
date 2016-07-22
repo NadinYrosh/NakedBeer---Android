@@ -49,15 +49,15 @@ public class BeerService {
 
                     String styleName = styleJSON.getString("name");
                     String description = styleJSON.getString("description");
-//                    String ABV = styleJSON.getString("abvMax");
-//                    String SRM = styleJSON.getString("srmMax");
-//                    String IBU = styleJSON.getString("ibuMax");
+                    double abv = styleJSON.getDouble("abvMax");
+                    double srm = styleJSON.getDouble("srmMax");
+                    double ibu = styleJSON.getDouble("ibuMax");
 
 
-                    BeerStyle beerStyle = new BeerStyle(styleName, description);
+                    BeerStyle beerStyle = new BeerStyle(styleName, description, abv, srm, ibu );
                     beerStyles.add(beerStyle);
 
-//                    Log.v("ABV is: ", ABV );
+                    Log.v("ABV is: ", String.valueOf(abv));
                 }
 
             }

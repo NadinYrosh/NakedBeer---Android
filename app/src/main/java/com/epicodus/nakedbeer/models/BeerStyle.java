@@ -6,19 +6,19 @@ import org.parceler.Parcel;
 public class BeerStyle {
     private String styleName;
     private String description;
-    private String mABV;
-    private String mSRM;
-    private String mIBU;
+    private double abv;
+    private double srm;
+    private double ibu;
     private String pushId;
 
     public BeerStyle() {}
 
-    public BeerStyle(String styleName, String description) {
+    public BeerStyle(String styleName, String description, double abv, double srm, double ibu ) {
         this.styleName = styleName;
         this.description = description;
-//        this.mABV = ABV;
-//        this.mSRM = SRM;
-//        this.mIBU = IBU;
+        this.abv = abv;
+        this.srm = srm;
+        this.ibu = ibu;
     }
 
     public String getStyleName() {
@@ -29,17 +29,17 @@ public class BeerStyle {
         return description;
     }
 
-//    public String getABV() {
-//        return mABV;
-//    }
-//
-//    public String getSRM() {
-//        return mABV;
-//    }
-//
-//    public String getIBU() {
-//        return mABV;
-//    }
+    public double getABV() {
+        return abv;
+    }
+
+    public double getSRM() {
+        return ibu;
+    }
+
+    public double getIBU() {
+        return abv;
+    }
 
     public String getPushId() {
         return pushId;
