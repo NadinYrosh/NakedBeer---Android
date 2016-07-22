@@ -31,6 +31,7 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
     @Bind(R.id.abvTextView) TextView mABV;
     @Bind(R.id.srmTextView) TextView mSRM;
     @Bind(R.id.ibuTextView) TextView mIBU;
+    @Bind(R.id.infoTextView) TextView mInfoIcon;
 
 
     private BeerStyle  mBeerStyle;
@@ -56,9 +57,11 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
         View view = inflater.inflate(R.layout.beer_style_fragment_detail_fragment, container, false);
         ButterKnife.bind(this, view);
 
+        mInfoIcon.setOnClickListener(this);
+
         mStyleName.setText(mBeerStyle.getStyleName());
         mDescription.setText(mBeerStyle.getDescription());
-        mABV.setText("ABV: " + Double.toString(mBeerStyle.getABV()));
+        mABV.setText("ABV: " + Double.toString(mBeerStyle.getABV()) + " %");
         mSRM.setText("SRM: " + Double.toString(mBeerStyle.getSRM()));
         mIBU.setText("IBU: " + Double.toString(mBeerStyle.getIBU()));
         //call other params from API
@@ -71,7 +74,11 @@ public class BeerStyleDetailFragment extends Fragment implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-       //for  Implicit intents...
+       if (view == mInfoIcon){
+       Intent webInfoIntent = new Intent(Intent.ACTION_VIEW,
+               Uri.parse("http://www.brewerydb.com/about/beer101"));
+           startActivity(webInfoIntent);
+       }
         if (view == mSaveButton) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();

@@ -10,6 +10,7 @@ public class BeerStyle {
     private double srm;
     private double ibu;
     private String pushId;
+    String website;
 
     public BeerStyle() {}
 
@@ -19,6 +20,7 @@ public class BeerStyle {
         this.abv = abv;
         this.srm = srm;
         this.ibu = ibu;
+        this.website = website;
     }
 
     public String getStyleName() {
@@ -47,6 +49,10 @@ public class BeerStyle {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getWebsite() {
+        return  website;
     }
 
 }
