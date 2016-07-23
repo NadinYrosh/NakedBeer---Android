@@ -2,16 +2,14 @@
 
 # Independent ProjectFor Android Class at Epicodus: NakedBeer
 
-#### This app allows you to search for information about your favorite beer(static information at this point), July 4, 2016
+#### This app allows you to search for information about your favorite beer styles to learn more about this drink. July 4, 2016
 
 #### By _Nadiya Yeroshkina_
 
 ## Description
 
-This app allows you to search for information about your favorite beer(static information at this point). Will keep working on it. Planing to use 2 API's to get information.
+This app allows you to search for information about your favorite beer style. I am using Brewerydb API to get aducational information about this drink.
 
-
-* Current version is the basic user interface with hard-code data.
 
 ## Installation
 
@@ -29,7 +27,7 @@ Feel free to contact me with questions or suggestions and contribute to the code
 
 ## Technologies Used
 
-* Guthub
+* Github
 * Android Studio
 * Git
 * Java
