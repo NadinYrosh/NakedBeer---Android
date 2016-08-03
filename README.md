@@ -6,6 +6,10 @@
 
 #### By _Nadiya Yeroshkina_
 
+![First Four Screens] (ScreenShotLogIn .png, ScreenShotLogout .png, ScreenShotMain .png, ScreenShotRegister .png)
+
+![Next Four Screens] ()
+
 ## Description
 
 This app allows you to search for information about your favorite beer style. I am using Brewerydb API to get aducational information about this drink.
