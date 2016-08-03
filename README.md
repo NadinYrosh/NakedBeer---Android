@@ -1,6 +1,7 @@
+![Register] (screenShotRegister.png)
 ![Home] (screenShotMain.png)
 ![Search] (screenShotSearch.png)
-![Search] (screenShotSetails.png)
+![Details] (screenShotSetails.png)
 
 
 
