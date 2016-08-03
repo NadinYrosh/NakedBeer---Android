@@ -1,9 +1,4 @@
-![Register] (screenShotRegister.png)
-![Home] (screenShotMain.png)
-![Search] (screenShotSearch.png)
-![Details] (screenShotSetails.png)
-
-
+![Screenshot] (screen3.jpg)
 
 # NakedBeer-Android
 
