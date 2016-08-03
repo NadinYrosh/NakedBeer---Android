@@ -1,3 +1,6 @@
+![First] (ScreenShotLogIn.png)
+
+
 # NakedBeer-Android
 
 # Independent ProjectFor Android Class at Epicodus: NakedBeer
@@ -5,8 +8,6 @@
 #### This app allows you to search for information about your favorite beer styles to learn more about this drink. July 4, 2016
 
 #### By _Nadiya Yeroshkina_
-
-![First] (ScreenShotLogIn.png)
 
 ## Description
 
@@ -21,6 +22,7 @@ This app allows you to search for information about your favorite beer style. I 
 
 ## Known Bugs
 
+Project still in development. No major bugs at this time.
 If a bug is found, please let me know via Github.
 
 ## Support and contact details
