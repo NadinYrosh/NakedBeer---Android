@@ -1,4 +1,5 @@
-![First] (screenShotLogIn.png)
+![Home] (screenShotMain.png), (screenShotSearch.png)
+![Search] (screenShotSearch.png)
 
 
 # NakedBeer-Android
