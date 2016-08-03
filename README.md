@@ -1,5 +1,7 @@
-![Home] (screenShotMain.png), (screenShotSearch.png)
+![Home] (screenShotMain.png)
 ![Search] (screenShotSearch.png)
+![Search] (screenShotSetails.png)
+
 
 
 # NakedBeer-Android
