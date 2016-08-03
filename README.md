@@ -6,9 +6,7 @@
 
 #### By _Nadiya Yeroshkina_
 
-![First Four Screens] (ScreenShotLogIn.png),(ScreenShotLogout.png), (ScreenShotMain.png),(ScreenShotRegister.png)
-
-![Next Four Screens] ()
+![First] (ScreenShotLogIn.png)
 
 ## Description
 
