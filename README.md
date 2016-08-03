@@ -1,4 +1,4 @@
-![First] (ScreenShotLogIn.png)
+![First] (screenShotLogIn.png)
 
 
 # NakedBeer-Android
