@@ -1,5 +1,5 @@
 ![Screenshot] (screen3.jpg)
-
+![Scrrn shot of the application](screen3.jpg?raw=true)
 # NakedBeer-Android
 
 # Independent ProjectFor Android Class at Epicodus: NakedBeer
