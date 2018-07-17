@@ -10,7 +10,7 @@
 
 ## Description
 
-This app allows you to search for information about your favorite beer style. I am using Brewerydb API to get aducational information about this drink.
+This app allows you to search for information about your favorite beer style. I am using Brewerydb API to get educational information about this drink.
 
 
 ## Installation
